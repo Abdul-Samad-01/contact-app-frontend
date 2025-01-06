@@ -1,0 +1,89 @@
+.main-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #f9f9f9;
+  }
+  
+  /* Label Section */
+  .label-section {
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .label-section h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .label-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .label-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .label-item input {
+    cursor: pointer;
+  }
+  
+  /* Contact Details Section */
+  .contact-details-section {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-details-section h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .contact-details-section p {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .my-contact{
+    height: 20px;
+  }
+
+  .search-filter{
+    height: 20px;
+  }
+  
+
+.my-contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 5px 5px;
+  margin-top: 5px;
+  background: linear-gradient(90deg, #dee9fc 55%, rgba(193, 216, 255, 0.856) 70%);
+  border-radius: 0 50px 50px 0;
+  margin-right: 5px ;
+}
+
+.name{
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
