@@ -1,0 +1,15 @@
+.contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    max-height: 90%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.contact-left{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

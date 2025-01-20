@@ -1,0 +1,70 @@
+/* Label Section */
+.label-section {
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .label-section h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .label-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    padding-right: 5px;
+  }
+  
+  .label-item input {
+    cursor: pointer;
+  }
+
+  .label-list li {
+    display: grid;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+  }
+
+  .label-list li.selected {
+    background: linear-gradient(90deg, #dee9fc 55%, rgba(193, 216, 255, 0.856) 70%);
+  }
+
+  .search-filter{
+    border-bottom: 1px solid #ccc;
+    height: 40px;
+    display: grid;
+    align-items: center;
+  }
+  
+.my-contact-label{
+    height: 50px;
+    display: grid;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    
+}
+.my-contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 5px 5px;
+  background: linear-gradient(90deg, #dee9fc 55%, rgba(193, 216, 255, 0.856) 70%);
+  border-radius: 0 50px 50px 0;
+  margin-right: 5px ;
+  height: 20px;
+}
+
+.name{
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
