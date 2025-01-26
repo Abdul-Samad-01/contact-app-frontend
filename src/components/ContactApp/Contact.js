@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Contact.css";
+import "../../css/Contact.css"; // Adjust the path as needed
 
 const Contact = ({ name, labelName }) => {
   return (

@@ -42,5 +42,6 @@
   .contacts{
     display: grid;
     align-items: center;
-    height: 30px;
+    max-height: 350px;
+    overflow-y: auto;
   }

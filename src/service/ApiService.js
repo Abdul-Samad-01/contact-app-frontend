@@ -6,9 +6,7 @@ const apiService = {
   getLabels: async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/contact-label`, {
-        headers: {
-          'userGoogleId': '104881545322707008576', 
-        },
+  
         withCredentials: true, // Ensures cookies (session) are sent
       });
       return response.data;
@@ -20,9 +18,7 @@ const apiService = {
   getContacts: async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/contact`, {
-        headers: {
-          'userGoogleId': '104881545322707008576', 
-        },
+    
         withCredentials: true, // Ensures cookies (session) are sent
       });
       return response.data;
@@ -31,7 +27,20 @@ const apiService = {
       throw error;
     }
   },
-  // Add more API methods as needed
+
+  checkAuthStatus: async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/auth-status`, {
+        credentials: "include", // Include cookies for session management
+      });
+      const data = await response.json();
+      console.log(data);
+      return data.isAuthenticated; // Returns true or false
+    } catch (error) {
+      console.error("Error checking auth status:", error);
+      return false;
+    }
+  },
 };
 
 export default apiService;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Label from "./Label";
 import Sharing from "./Sharing";
-import apiService from "../service/ApiService";
-import "../css/LabelSection.css";
+import apiService from "../../service/ApiService";
+import "../../css/LabelSection.css";
 
 const LabelSection = ({ selectedLabel, setSelectedLabel }) => {
   const [labels, setLabels] = useState([]);

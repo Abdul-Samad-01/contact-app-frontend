@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import Contact from "./Contact";
-import apiService from "../service/ApiService";
-import "../css/ContactSection.css";
+import apiService from "../../service/ApiService";
+import "../../css/ContactSection.css";
 
 const ContactSection = ({ selectedLabel }) => {
   const [contacts, setContacts] = useState([]);

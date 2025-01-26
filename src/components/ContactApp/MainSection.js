@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../css/MainSection.css";
+import "../../css/MainSection.css";
 import LabelSection from "./LabelSection";
 import ContactSection from './ContactSection';
 

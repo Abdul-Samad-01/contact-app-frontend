@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Sharing.css";
+import "../../css/Sharing.css";
 
 const Sharing = () => {
   return (
