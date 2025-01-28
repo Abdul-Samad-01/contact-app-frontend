@@ -8,6 +8,10 @@
     font-size: 12px;
 }
 
+.contact:hover{
+    background-color: #f0f0f0;
+}
+
 .contact-left{
     display: flex;
     align-items: center;

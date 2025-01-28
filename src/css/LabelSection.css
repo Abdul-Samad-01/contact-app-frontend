@@ -35,6 +35,10 @@
     background: linear-gradient(90deg, #dee9fc 55%, rgba(193, 216, 255, 0.856) 70%);
   }
 
+  .label-list li:not(.selected):hover {
+    background: linear-gradient(90deg, #dee9fc67 55%, rgba(193, 216, 255, 0.345) 70%);
+  }
+
   .search-filter{
     border-bottom: 1px solid #ccc;
     height: 40px;
@@ -49,15 +53,22 @@
     border-bottom: 1px solid #ccc;
     
 }
-.my-contact{
+.my-contact {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px 5px 5px 5px;
-  background: linear-gradient(90deg, #dee9fc 55%, rgba(193, 216, 255, 0.856) 70%);
   border-radius: 0 50px 50px 0;
   margin-right: 5px ;
   height: 20px;
+}
+
+.my-contact.selected{
+  background: linear-gradient(90deg, #dee9fc 55%, rgba(193, 216, 255, 0.856) 70%);
+}
+
+.my-contact:not(.selected):hover {
+  background: linear-gradient(90deg, #dee9fc67 55%, rgba(193, 216, 255, 0.345) 70%);
 }
 
 .name{

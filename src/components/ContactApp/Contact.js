@@ -1,12 +1,14 @@
 import React from "react";
-import "../../css/Contact.css"; // Adjust the path as needed
+import "../../css/Contact.css";
 
-const Contact = ({ name, labelName }) => {
+const Contact = ({ contact, labelName, setSelectedContact, selectedContact }) => {
+
+  const contactClassName = `contact ${selectedContact !== null && selectedContact === contact ? "selected" : ""}`;
   return (
-    <div className="contact">
+    <div className={contactClassName} onClick={() => setSelectedContact(contact)}>
       <div className="contact-left">
         <input type="checkbox" className="contact-checkbox" />
-        <span className="contact-name">{name}</span>
+        <span className="contact-name">{contact.names[0].displayName}</span>
       </div>
       <div className="contact-right">
         <span className="contact-label">{labelName}</span>
