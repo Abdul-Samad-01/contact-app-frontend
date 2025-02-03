@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import SearchBar from "./SearchBar";
 import Contact from "./Contact";
 import apiService from "../../service/ApiService";
 import ContactDisplayCard from "./ContactDisplayCard";
 import "../../css/ContactSection.css";
+import { setContacts, setSelectedContact } from "../../redux/slices/contactSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const ContactSection = ({ selectedLabel }) => {
-  const [contacts, setContacts] = useState([]);
-  const [selectedContact, setSelectedContact] = useState("No-Contact");
+const ContactSection = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector((state) => state.contacts.contacts);
+  const selectedContact = useSelector((state) => state.contacts.selectedContact);
+  const selectedLabel = useSelector((state) => state.labels.selectedLabels);
+
 
   useEffect(() => {
     const fetchContacts = async () => {
@@ -15,7 +20,7 @@ const ContactSection = ({ selectedLabel }) => {
         let data = await apiService.getContacts();
         data = data;
         console.log(data);
-        setContacts(data);
+        dispatch(setContacts(data));
       } catch (error) {
         console.error("Error fetching Contact:", error);
       }
@@ -23,10 +28,15 @@ const ContactSection = ({ selectedLabel }) => {
     if (selectedLabel) {
       fetchContacts();
     }
-  }, [selectedLabel]);
+  }, [selectedLabel, dispatch]);
+
+  const handleContactClick = (contact) => {
+    dispatch(setSelectedContact(contact));
+  };
+
   return (
     <div className="contact-details-section">
-      {selectedContact === "No-Contact" ? (
+      {selectedContact === null ? (
         <>
           <div className="search-section">
             <SearchBar onSearch={() => {}} />
@@ -42,14 +52,14 @@ const ContactSection = ({ selectedLabel }) => {
               <Contact
                 contact={contact}
                 labelName={selectedLabel.name}
-                setSelectedContact={setSelectedContact}
+                setSelectedContact={handleContactClick}
                 selectedContact={selectedContact}
               />
             ))}
           </div>
         </>
       ) : (
-        <ContactDisplayCard contact={selectedContact} setSelectedContact={setSelectedContact} />
+        <ContactDisplayCard contact={selectedContact} setSelectedContact={handleContactClick} />
       )}
     </div>
   );

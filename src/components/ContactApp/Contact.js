@@ -8,7 +8,7 @@ const Contact = ({ contact, labelName, setSelectedContact, selectedContact }) =>
     <div className={contactClassName} onClick={() => setSelectedContact(contact)}>
       <div className="contact-left">
         <input type="checkbox" className="contact-checkbox" />
-        <span className="contact-name">{contact.names[0].displayName}</span>
+        <span className="contact-name">{contact.name}</span>
       </div>
       <div className="contact-right">
         <span className="contact-label">{labelName}</span>

@@ -3,8 +3,13 @@ import Label from "./Label";
 import Sharing from "./Sharing";
 import apiService from "../../service/ApiService";
 import "../../css/LabelSection.css";
+import { setSelectedLabels } from "../../redux/slices/labelsSlice";
+import { setSelectedContact } from "../../redux/slices/contactSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const LabelSection = ({ selectedLabel, setSelectedLabel }) => {
+const LabelSection = () => {
+  const dispatch = useDispatch();
+  const selectedLabels = useSelector((state) => state.labels.selectedLabels);
   const [labels, setLabels] = useState([]);
 
   const myContactLabel = {
@@ -28,14 +33,15 @@ const LabelSection = ({ selectedLabel, setSelectedLabel }) => {
   }, []);
 
   const handleLabelClick = (label) => {
-    setSelectedLabel(label);
+    dispatch(setSelectedLabels(label));
+    dispatch(setSelectedContact(null));
   };
 
   return (
     <div className="label-section">
       <div className="my-contact-label"
-      onClick={() => setSelectedLabel(myContactLabel)}>
-        <div className={`my-contact ${selectedLabel !== null && selectedLabel.name === "My-Contact" ? "selected" : ""}`}>
+      onClick={() => handleLabelClick(myContactLabel)}>
+        <div className={`my-contact ${selectedLabels !== null && selectedLabels.name === "My-Contact" ? "selected" : ""}`}>
           <div className="name">
             <img
               src="/images/pngwing.com.png"
@@ -54,7 +60,7 @@ const LabelSection = ({ selectedLabel, setSelectedLabel }) => {
         {labels.map((label, index) => (
           <li
           key={index}
-          className={selectedLabel === label ? "selected" : ""}
+          className={selectedLabels === label ? "selected" : ""}
           onClick={() => handleLabelClick(label)}
         >
             <Label text={label.name} count={label.memberCount} />
